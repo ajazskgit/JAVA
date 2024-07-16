@@ -1,0 +1,29 @@
+import java.util.*;
+public class java {
+
+    public static void pair(int arr[]){
+        System.out.println("Below are distinct pairs:-");
+        int tp=0;
+        for(int i=0;i<arr.length;i++){
+            int curr= arr[i];
+                for(int j=i+1;j<arr.length;j++){
+                    System.out.print("(" +curr+ ","+arr[j]+")");
+                    tp++;
+                }System.out.println();
+        }System.out.print("Total Pair are: " + tp);
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter Number for Pairing: ");
+        int arr[] = new int[6];
+        arr[0]=sc.nextInt();
+        arr[1]=sc.nextInt(); 
+        arr[2]=sc.nextInt();
+        arr[3]=sc.nextInt();
+        arr[4]=sc.nextInt();
+        arr[5]=sc.nextInt();
+
+        pair(arr);
+
+    }
+}
