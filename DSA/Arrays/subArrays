@@ -1,0 +1,32 @@
+import java.util.*;
+public class java {
+
+    public static void pair(int arr[]){
+        int tp=0;
+        for(int i=0;i<arr.length;i++){
+            int start=i;
+            for(int j=i;j<arr.length;j++){
+                int end=j;
+                for(int k=start;k<=end;k++){
+                    System.out.print(arr[k]+" ");
+                }System.out.println();
+                 tp++;
+            }System.out.println();
+        }System.out.println("Total Subarrays are:-"+tp);
+    }
+       
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter Number for Pairing: ");
+        int arr[] = new int[5];
+        arr[0]=sc.nextInt();
+        arr[1]=sc.nextInt(); 
+        arr[2]=sc.nextInt();
+        arr[3]=sc.nextInt();
+        arr[4]=sc.nextInt();
+        arr[5]=sc.nextInt();
+        System.out.println("Sub Arrays are:-");
+
+        pair(arr);
+    }
+}
