@@ -1,0 +1,37 @@
+import java.util.*;
+public class java {
+    // int arr[]={5,6,4,8,2,1};
+    // selectionsort(arr);
+   public static void selectionsort(int arr[]){
+    for(int i=0;i<arr.length-1;i++){
+        int min=i;
+        for(int j=i+1;j<arr.length;j++){
+            if (arr[min]>arr[j]) {
+                min=j;
+            }
+        }
+        if (min!=i) {
+            //swap
+            int temp = arr[i];
+            arr[i]=arr[min];
+            arr[min]=temp;
+        }
+    }
+   }
+    //Printing Swap Array
+    public static void print(int arr[]){
+        System.out.println("Selection sort:");
+        for(int i=0;i<arr.length;i++){
+            System.out.print(arr[i] + " ");
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int arr[]={5,6,4,8,2,1};
+        selectionsort(arr);
+        print(arr);
+        
+        
+    }
+}
