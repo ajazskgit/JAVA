@@ -1,0 +1,42 @@
+import java.util.*;
+import java.util.Arrays;
+import java.util.Collections; 
+public class java {
+    // int arr[]={5,6,4,8,2,1};
+    //counting Sort
+    public static void countarr(int arr[]){
+        int largest = Integer.MIN_VALUE;
+        for(int i=0;i<arr.length;i++){
+            largest=Math.max(largest, arr[i]);
+        }
+        int count[]=new int[largest+1];
+        for(int i=0;i<arr.length;i++){
+            count[arr[i]]++;
+        }
+        int j=0;
+        for(int i=0;i<count.length;i++){
+            while (count[i]>0) {
+                arr[j]= i;
+                j++;
+                count[i]--;
+            }
+        }
+
+
+    }
+    //Printing Swap Array
+    public static void print(int arr[]){
+        System.out.println("Selection sort:");
+        for(int i=0;i<arr.length;i++){
+            System.out.print(arr[i] + " ");
+        }
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int arr[]={1,6,3,3,2,1,5,4,4,5,2};
+        countarr(arr);
+        print(arr);
+    
+    }
+}
