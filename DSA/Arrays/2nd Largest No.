@@ -1,3 +1,4 @@
+//Both Code are Correct
 
 public class Main {
 
@@ -14,6 +15,28 @@ public class Main {
             }
             else if(sec<arr[i] && arr[i]<max){
                 sec=arr[i];
+            }
+        }
+        System.out.println(max);
+        System.out.println(sec);
+
+}
+}
+
+//Optimize Soln....
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        int arr[] ={1,11,20,15,34};
+        int max=Integer.MIN_VALUE;
+        int sec=Integer.MIN_VALUE;
+
+        for(int i=0;i<arr.length;i++){
+            if(max<arr[i]){
+                sec=max;
+                max=arr[i];
             }
         }
         System.out.println(max);
