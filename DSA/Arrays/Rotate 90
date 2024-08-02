@@ -1,0 +1,75 @@
+import java.util.*;
+
+public class str{
+    public static void print(int[][] matrix ){
+        for(int i=0;i<matrix.length;i++){
+            for(int j=0;j<matrix[i].length;j++){
+                System.out.print(matrix[i][j]+ " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public static void transpose(int[][] a,int r, int c){
+        for(int i=0;i<c;i++){
+            for(int j=i;j<r;j++){
+                int temp=a[i][j];
+                a[i][j]=a[j][i];
+                a[j][i]=temp;
+
+            }
+        }
+        print(a);
+    }
+    
+    public static void reverseArray(int[] a){
+
+        int i=0; int j=a.length-1;
+        while(i<j){
+            int temp=a[i];
+            a[i]=a[j];
+            a[j]=temp;
+            i++;
+            j--;
+        }
+    }
+    
+    public static void rotate(int[][] a, int n){
+        //transpose
+        System.out.println("Transpose of Matrix");
+        transpose(a, n, n);
+        //reverse
+        for(int i=0;i<n;i++){
+            reverseArray(a[i]);
+        }
+        
+
+    }
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter no. of rows & cols for matrix 1");
+        int r=sc.nextInt();
+        int c =sc.nextInt();
+        
+        int a[][]= new int[r][c];
+        int ele = r*c;
+        System.out.println("Enter " + ele+ " values in "+ r+"*"+ c+  " Matrix");
+
+        for(int i=0;i<r;i++){
+            for(int j=0;j<c;j++){
+                a[i][j]=sc.nextInt();
+            }
+        }
+
+        System.out.println("Printing Matrix 1");
+        print(a);
+        System.out.println("--------------");
+
+        // System.out.println("Transpose of Matrix is:--");
+        // transpose(a, r, c);
+        rotate(a,r);
+        System.out.println("Rotation of Matrix");
+        
+        print(a);
+    }
+}
