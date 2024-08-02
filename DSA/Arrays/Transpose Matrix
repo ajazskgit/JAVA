@@ -1,3 +1,6 @@
+
+//Aplicable only for sq matrix.
+
 import java.util.*;
 
 public class str{
