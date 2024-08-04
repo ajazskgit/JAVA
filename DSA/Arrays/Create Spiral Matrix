@@ -1,0 +1,58 @@
+import java.util.Scanner;
+
+class str {
+
+    public static void print(int[][] matrix ){
+        for(int i=0;i<matrix.length;i++){
+            for(int j=0;j<matrix[i].length;j++){
+                System.out.print(matrix[i][j]+ " ");
+            }
+            System.out.println();
+        }
+    }
+
+    public static int[][] spiral(int n){
+        int[][] ans =new int [n][n];
+        
+        int toprow=0; int leftcol=0;int rightcol=n-1;int bottomrow=n-1;
+        int ele=1;
+        while(ele<=n*n){
+            for(int j=leftcol;j<=rightcol && ele<=n*n;j++){
+                ans[toprow][j]=ele++;
+            }
+            toprow++;
+
+
+            for(int i=toprow;i<=bottomrow && ele<=n*n;i++){
+                ans[i][rightcol] =ele++;
+            }
+            rightcol--;
+ 
+          
+            for(int j=rightcol;j>=leftcol && ele<=n*n;j--){
+                ans[bottomrow][j] =ele++;
+            }
+            bottomrow--;
+   
+            
+            for(int i=bottomrow;i>=toprow && ele<=n*n;i--){
+               ans[i][leftcol]=ele++;
+            }
+            leftcol++;
+         
+
+        }
+       return ans;
+    }
+    public static void main(String[] args) {
+        
+        Scanner sc=new Scanner(System.in);
+       
+System.out.println("Enter n:--");
+        int n=sc.nextInt();
+        int [][]a=spiral(n);
+        print(a);
+
+
+    }
+}
