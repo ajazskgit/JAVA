@@ -1,0 +1,66 @@
+import java.util.Scanner;
+
+class str {
+
+    public static void print(int[][] matrix ){
+        for(int i=0;i<matrix.length;i++){
+            for(int j=0;j<matrix[i].length;j++){
+                System.out.print(matrix[i][j]+ " ");
+            }
+            System.out.println();
+        }
+    }
+   
+    
+        public static boolean abc(int[][] matrix, int target) {
+            
+            int r=matrix.length;
+            int c=matrix[0].length;
+    
+            int st=0; int end=(r*c)-1;
+    
+            while(st<=end){
+    
+                int mid=(st+end)/2;
+                int ele=matrix[mid/c][mid%c];
+                if(ele==target){
+                    return true;
+                }
+                if(ele<target){
+                    st=mid+1;
+                }
+                else{
+                    end=mid-1;
+                }
+            }
+            return false;
+        }
+    
+
+    
+    public static void main(String[] args) {
+        Scanner sc =new Scanner(System.in);
+
+        System.out.println("Enter no. of rows in Matrix:");
+        int r=sc.nextInt();
+        System.out.println("Enter no. of Col in Matrix:");
+        int c =sc.nextInt();
+        System.err.println("Enter "+ r*c+" values in Matrix");
+
+        int arr[][]=new int[r][c];
+        for(int i=0;i<r;i++){
+            for(int j=0;j<c;j++){
+                arr[i][j]=sc.nextInt();
+            }
+        }
+        System.out.println("enter target valur:");
+        int k=sc.nextInt();
+
+        System.out.println("Printing Matrix");
+        print(arr);
+
+        boolean a= abc(arr,k);
+        System.out.println(a);
+        
+    }
+}
