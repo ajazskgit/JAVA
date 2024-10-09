@@ -24,7 +24,7 @@ public class BankAcc{
                     }
                 }else{
                     System.out.println(Thread.currentThread().getName() + "babu insufficient balance hai");
-                    Thread.sleep(8000);
+                    lock.unlock();
                 }
 
             }else{
