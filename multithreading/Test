@@ -1,0 +1,18 @@
+package com.multithreading;
+
+public class Test {
+    public static void main(String[] args) {
+        BankAcc sbi = new BankAcc();
+        Runnable run=new Runnable() {
+            @Override
+            public void run() {
+                sbi.withdraw(1100); }
+
+        };
+
+        Thread t1 = new Thread(run,"aman");
+        Thread t2 = new Thread(run,"Bob");
+        t1.start(); t2.start();
+
+    }
+}
