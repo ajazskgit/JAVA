@@ -1,0 +1,12 @@
+class Solution
+{
+    //Function to return a list containing the union of the two arrays.
+    public static ArrayList<Integer> findUnion(int arr1[], int arr2[], int n, int m)
+    {
+        TreeSet<Integer> u = new TreeSet<>();
+                for(int a:arr1) u.add(a);
+                for(int b:arr2) u.add(b);
+                
+                return new ArrayList<Integer>(u);
+     }
+}
