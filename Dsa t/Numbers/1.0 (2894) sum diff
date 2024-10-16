@@ -1,0 +1,9 @@
+class Solution {
+    public int differenceOfSums(int n, int m) {
+        int x=n/m;
+        int num1=(x*(x+1)/2)*m;
+        int num2=(n*(n+1)/2)-num1;
+        return num2-num1;
+
+    }
+}
