@@ -5,7 +5,7 @@ class Solution {
             if(nums[i]!=nums[j]){
                 nums[++j]=nums[i];
             }
-        }
+        }                                     //Using 2 pointer approach
         return j+1;
     }
 }
